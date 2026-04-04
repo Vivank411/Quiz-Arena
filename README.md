@@ -1,4 +1,6 @@
-# AntiGravity Multiplayer Quiz Arena 🚀
+# Multiplayer Quiz Arena 🚀
+
+Deployed Link: https://quiz-arena-game.onrender.com/
 
 An intermediate-to-advanced level full-stack web application showcasing real-time synchronization, fluid requestAnimationFrame physics, and deep Socket.IO room management. 
 
