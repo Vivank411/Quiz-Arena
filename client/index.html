@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Arena</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <!-- Stars Background -->
+    <div id="space-bg"></div>
+
+    <div class="container">
+
+        <!-- View 1: Join / Create -->
+        <div id="view-join" class="view active glass-panel">
+            <h1 class="logo">Quiz <span>Arena</span></h1>
+            <div class="form-group">
+                <input type="text" id="playerName" placeholder="Enter Your Name" autocomplete="off" />
+            </div>
+            <div class="actions">
+                <button id="btnCreate" class="btn primary">Create New Room</button>
+                <div class="divider">OR</div>
+                <input type="text" id="roomCodeInput" placeholder="Room Code" autocomplete="off" maxlength="6"
+                    style="text-transform: uppercase;" />
+                <button id="btnJoin" class="btn secondary">Join Room</button>
+            </div>
+            <p id="joinError" class="error"></p>
+        </div>
+
+        <!-- View 2: Lobby -->
+        <div id="view-lobby" class="view glass-panel">
+            <h2>Room Code: <span id="displayRoomCode" class="highlight"></span></h2>
+            <h3>Players Joined:</h3>
+            <ul id="playerList" class="player-list"></ul>
+
+            <div id="hostControls" class="hidden">
+                <button id="btnStart" class="btn primary glowing">Start Game</button>
+            </div>
+            <p id="waitingMsg">Waiting for host to start...</p>
+        </div>
+
+        <!-- View 3: Game -->
+        <div id="view-game" class="view">
+            <!-- Sidebar / Topbar for Score & Timer -->
+            <div class="game-hud">
+                <div class="timer-box">
+                    <span id="timeRemaining">15</span>s
+                </div>
+                <!-- Leaderboard UI updates in real-time -->
+                <div class="leaderboard glass-panel">
+                    <h3>Top Scores</h3>
+                    <ul id="gameLeaderboard"></ul>
+                </div>
+            </div>
+
+            <!-- Central Game Area -->
+            <div class="game-board glass-panel" id="gameBoard">
+                <h2 id="questionText">Get Ready...</h2>
+                <div id="questionProgress">Question 1 / 5</div>
+
+                <!-- AntiGravity Box for Answers -->
+                <div id="antigravity-arena" class="arena hidden">
+                    <!-- Buttons will be injected here and moved via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- View 4: Game Over -->
+        <div id="view-over" class="view glass-panel text-center">
+            <h1>Game Over!</h1>
+            <div id="finalScores"></div>
+            <br>
+            <button class="btn secondary" onclick="location.reload()">Play Again</button>
+        </div>
+
+    </div>
+
+    <script src="antigravity.js?v=3"></script>
+    <script src="app.js?v=3"></script>
+</body>
+
+</html>
