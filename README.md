@@ -5,7 +5,7 @@ Deployed Link: https://quiz-arena-game.onrender.com/
 An intermediate-to-advanced level full-stack web application showcasing real-time synchronization, fluid requestAnimationFrame physics, and deep Socket.IO room management. 
 
 ## 🌟 Features
-- **AntiGravity Mode**: Answer options detach from standard UI flow and bounce around the container using a highly optimized, GPU-accelerated Vanilla JS physics engine.
+- **Mode**: Answer options detach from standard UI flow and bounce around the container using a highly optimized, GPU-accelerated Vanilla JS physics engine.
 - **Speed Scoring**: Points are heavily weighted based on remaining time when an answer is clicked.
 - **Robust Real-time Backend**: Manages multiple concurrent rooms without state collision, including connection drops and garbage collections of lingering empty rooms.
 - **MySQL Interfacing**: Hooks securely into a MySQL database via connection-pooling, while utilizing smart fallbacks to in-memory questions allowing it to boot instantly even without MySQL.
